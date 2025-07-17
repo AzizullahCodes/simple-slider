@@ -13,9 +13,9 @@
       padding: 20px;
     }
 
-    img{display: none;}
+    .image-box{display: none;}
 
-    .visib{display: block;}
+  .image-box.active{display: block;}
 
     .image-box {
       margin-bottom: 40px;

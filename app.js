@@ -1,15 +1,23 @@
-let currentImg = 0;
-let getImg = document.querySelectorAll('img');
-console.log(getImg);
-// first function 
-function showImage(index){for(let i = 0;i < getImg.length;i++){getImg[i].classList.remove('visib')}
-getImg[index].classList.add('visib')}
 
-// second function
-function previous(){currentImg = (currentImg + 1)% getImg.length;
-    showImage(currentImg)
+let currentImg = 0;
+let getImgBoxes = document.querySelectorAll('.image-box');
+
+function showImage(index) {
+  for (let i = 0; i < getImgBoxes.length; i++) {
+    getImgBoxes[i].classList.remove('active');
+  }
+  getImgBoxes[index].classList.add('active');
 }
-// third function 
-function next(){currentImg = (currentImg - 1 + getImg.length)% getImg.length;
-    showImage(currentImg)
+
+function next() {
+  currentImg = (currentImg + 1) % getImgBoxes.length;
+  showImage(currentImg);
 }
+
+function previous() {
+  currentImg = (currentImg - 1 + getImgBoxes.length) % getImgBoxes.length;
+  showImage(currentImg);
+}
+
+// Initialize: show first image
+ showImage(currentImg);
